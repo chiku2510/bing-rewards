@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open New Page Desktop</title>
+    <script>
+        var urlsToOpen = [
+            'https://www.bing.com/search?q=UsainBolu&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=TheRock&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=SerenaWilliams&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=LionelMessi&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Ronaldo&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=RogerFederer&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=novakDjokovic&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=TigerWood&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=TomBrady&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=BabeRuth&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Pele&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=SimoneBilesf&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Barty&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Messi&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Tarak&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Mehta&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Ali&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Boly&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=BillGates&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Elon Musk&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Jack Ma&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Mother Teress&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=MarieCurie&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Babitaji&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Anjali ji&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Hathi bhai&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Kavya Maran&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Priti Zinta&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Neeta ambani&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Mukeshbhhai&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=India India !! &cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Narendra damoardas modi&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Amit bhau&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Gandhi bapu &cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Tick Tick one&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Tiktok creater&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+
+            'https://www.bing.com/search?q=WhatsApp&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+
+            'https://www.bing.com/search?q=Laptop to apna hi !!&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+
+            'https://www.bing.com/search?q=Ab tu kya karega&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+
+            'https://www.bing.com/search?q=FirseUlluBanayaBing&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+
+        ];
+
+        console.log(urlsToOpen.length)
+
+        // Function to open URLs at intervals
+        function openUrlsSequentially() {
+            var currentIndex = 0;
+
+            // Function to open the next URL and close after 5 seconds
+            function openNextUrl() {
+                if (currentIndex < urlsToOpen.length) {
+                    var openedWindow = window.open(urlsToOpen[currentIndex], '_blank');
+
+                    // Close the opened window after 5 seconds
+                    setTimeout(function () {
+                        openedWindow.close();
+                    }, 5000);
+
+                    currentIndex++;
+                } else {
+                    // All URLs have been opened, clear the interval
+                    clearInterval(intervalId);
+                }
+            }
+
+            // Initial call to open the first URL
+            openNextUrl();
+
+            // Set interval to open subsequent URLs every 10 seconds (5 seconds + 5 seconds delay)
+            var intervalId = setInterval(openNextUrl, 10000);
+        }
+
+        // Attach the function to the window.onload event
+        window.onload = openUrlsSequentially;
+
+
+
+    </script>
+</head>
+
+<body>
+    <!-- Your webpage content goes here -->
+    <h1>Welcome to My Website!</h1>
+    <p>This is for Desktop</p>
+</body>
+
+</html>

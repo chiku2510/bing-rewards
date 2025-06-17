@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open New Page Mobile</title>
+    <script>
+        var urlsToOpen = [
+            'https://www.bing.com/search?q=Lion&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Tiger&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Chitah&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Fox&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Rabbit&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Pagwin&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Crow&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Shark&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Flamingo&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Elephant&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Doremon&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Jiraf&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Rakshabandhan&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Bluewhale&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Shark2.0&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Animals&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Dear&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Rakshabandhan&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Navratri&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Ganesh Chaturthi&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Ramnavami&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=ShreeHariJayanti&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Diwali&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Bhaibij&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=NewYear&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=KaliChaudash&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Akhatrij&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=MakarSankranti&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Dhuleti&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=Holi&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=IndependanceDay&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=RepublicDay&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=GandhiJayanti&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=SardarPatelJayanti&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+            'https://www.bing.com/search?q=FirseUlluBanayaBing&cvid=8845608978d24341acbbe2b59bd81348&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYOzIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPDIGCAcQRRg90gEIMjA2MGowajGoAgCwAgA&FORM=ANAB01&PC=U531',
+
+
+        ];
+
+        console.log(urlsToOpen.length)
+
+        // Function to open URLs at intervals
+        function openUrlsSequentially() {
+            var currentIndex = 0;
+
+            // Function to open the next URL and close after 5 seconds
+            function openNextUrl() {
+                if (currentIndex < urlsToOpen.length) {
+                    var openedWindow = window.open(urlsToOpen[currentIndex], '_blank');
+
+                    // Close the opened window after 5 seconds
+                    setTimeout(function () {
+                        openedWindow.close();
+                    }, 5000);
+
+                    currentIndex++;
+                } else {
+                    // All URLs have been opened, clear the interval
+                    clearInterval(intervalId);
+                }
+            }
+
+            // Initial call to open the first URL
+            openNextUrl();
+
+            // Set interval to open subsequent URLs every 10 seconds (5 seconds + 5 seconds delay)
+            var intervalId = setInterval(openNextUrl, 10000);
+        }
+
+        // Attach the function to the window.onload event
+        window.onload = openUrlsSequentially;
+
+
+
+    </script>
+</head>
+
+<body>
+    <!-- Your webpage content goes here -->
+    <h1>Welcome to My Website!</h1>
+    <p>This is for Mobile</p>
+</body>
+
+</html>
